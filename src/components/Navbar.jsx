@@ -1,31 +1,45 @@
 import React, { useState } from "react";
 import Smrti from "../assets/Smrti.png";
+import Smrtiw from "../assets/Smrtiw.png";
 import Menu from "../assets/Menu.png";
 import cross from "../assets/cross.png";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Determine styles or layout based on the current URL
+  const isContactPage = location.pathname === "/contact";
 
   return (
-    <div className="relative h-24 w-full px-6 py-4 bg-[#ffffff00] flex flex-row justify-between items-center">
+    <div className="relative h-24 w-full px-6 py-4 bg-transparent flex flex-row justify-between items-center z-10">
       {/* Logo */}
-      <img
-        src={Smrti}
-        alt="Logo"
-        className="w-[80px] h-[35px] cursor-pointer object-contain"
-      />
+      <Link to="/">
+        <img
+          src={isContactPage ? Smrtiw : Smrti}
+          alt="Logo"
+          className="w-[80px] h-[35px] cursor-pointer object-contain transition-all duration-300"
+        />
+      </Link>
 
       {/* Desktop Buttons */}
       <div className="hidden sm:flex flex-row items-center">
-        <button
-          type="button"
-          className="text-black text-base px-4 py-2 font-medium hover:text-orange-400 mr-[17px]"
+        <Link
+          to="/contact"
+          className={` text-base px-4 py-2 font-medium hover:text-orange-400 mr-[17px] ${
+            isContactPage ? "text-white" : "text-black"
+          }`}
         >
           Contact Us
-        </button>
+        </Link>
         <button
           type="button"
-          className="text-white text-base bg-[#0F4189] hover:bg-blue-800 px-4 py-2 rounded-xl font-medium"
+          className={`text-base  px-4 py-2 rounded-xl font-medium ${
+            isContactPage
+              ? "text-black bg-white hover:bg-slate-100"
+              : "text-white bg-[#0F4189] hover:bg-blue-800"
+          }`}
         >
           Start for Free
         </button>
@@ -52,16 +66,13 @@ export default function Navbar() {
         }}
       >
         <div className="flex flex-col items-center p-4">
-          <div
+          <Link
+            to="/contact"
             className="text-[#FF793F] text-base px-4 py-2 font-roboto-medium hover:text-orange-400 hover:transition-colors hover::duration-700 w-full text-center"
-            onClick={() => setIsMenuOpen(false)} // Close menu after click
           >
             Contact Us
-          </div>
-          <div
-            className="text-white text-base bg-[#1D5CB7] mx-10 py-2 rounded-xl font-roboto-medium mt-2 hover:bg-blue-800 transition-all duration-700 ease-in-out w-full text-center"
-            onClick={() => setIsMenuOpen(false)} // Close menu after click
-          >
+          </Link>
+          <div className="text-white text-base bg-[#1D5CB7] mx-10 py-2 rounded-xl font-roboto-medium mt-2 hover:bg-blue-800 transition-all duration-700 ease-in-out w-full text-center">
             Start for Free
           </div>
         </div>

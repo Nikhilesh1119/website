@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import ResponsiveCards from "./ResponsiveCards";
 
 import logo from "../assets/logo.png";
-import phone from "../assets/phone.png";
-import email from "../assets/email.png";
-import Smrtiw from "../assets/Smrtiw.png";
 import section1 from "../assets/section1.png";
 import underline from "../assets/underline.png";
 import attendance from "../assets/attendance.png";
@@ -187,7 +184,7 @@ export default function Content() {
 
   return (
     <div>
-      {/* section 1 */}
+      {/* Intro */}
       <section>
         <div className="mt-12 flex flex-col justify-center items-center px-4">
           <div className="relative text-center">
@@ -207,15 +204,13 @@ export default function Content() {
           <div className="flex w-[280px] justify-around">
             <button
               type="button"
-              className="text-white text-base bg-[#0F4189] px-4 py-2 rounded-xl font-roboto-medium mt-2 text-center"
-              onClick={() => setIsMenuOpen(false)} // Close menu after click
+              className="text-white text-base bg-[#0F4189] hover:bg-blue-800 px-4 py-2 rounded-xl font-roboto-medium mt-2 text-center"
             >
               Start for Free
             </button>
             <button
               type="button"
               className="text-black text-base bg-[#ffffff] px-4 py-2 rounded-xl border border-[#edeef0] font-roboto-medium mt-2 text-center"
-              onClick={() => setIsMenuOpen(false)} // Close menu after click
             >
               Talk to sales
             </button>
@@ -227,7 +222,7 @@ export default function Content() {
           className="w-full px-4 sm:px-24"
         />
       </section>
-      {/* section 2 */}
+      {/* Key Features */}
       <section>
         <div className="mt-12 flex flex-col justify-center items-center px-4">
           <div className="relative text-center">
@@ -248,7 +243,7 @@ export default function Content() {
         <div className="w-full px-4 sm:px-24 ">
           <div className="px-4 sm:px-[57px] sm:py-[6px] bg-[#F4F5F6] rounded-[20px]">
             <div className="px-4 sm:px-[40px] sm:py-[36px] bg-white rounded-[20px]">
-            <ResponsiveCards
+              <ResponsiveCards
                 bgImage={bgImage}
                 items={items}
                 views={views}
@@ -259,7 +254,7 @@ export default function Content() {
           </div>
         </div>
       </section>
-      {/* section 3 */}
+      {/* Attendance Section */}
       <section>
         <div className="mt-12 flex flex-col justify-center items-center px-5">
           <div className="relative text-center">
@@ -277,8 +272,8 @@ export default function Content() {
             organized and focused on your students.
           </p>
 
-          <div className="w-full max-w-[1138px] border border-[#D3D5D9] h-[504px] max-sm:p-4 sm:pl-10 pt-6 sm:pt-10 rounded-[20px] flex flex-col sm:flex-row justify-between sm:space-x-6">
-            <p className="w-full sm:w-[382px] text-sm sm:text-lg font-roboto-regular text-center sm:text-left mb-4 sm:mb-0">
+          <div className="w-full max-w-[1138px] border border-[#D3D5D9] h-[400px] sm:h-[504px] sm:pl-10 pt-6 sm:pt-10 rounded-[20px] flex flex-col sm:flex-row justify-between sm:space-x-6">
+            <p className="w-full sm:w-[382px] px-5 text-sm sm:text-lg font-roboto-regular text-center sm:text-left mb-4 sm:mb-0">
               Quickly
               <b> mark attendance, access student data, and monitor trends</b>
               with just a few taps, all in one intuitive app.
@@ -286,12 +281,12 @@ export default function Content() {
             <img
               src={attendance}
               alt="Attendance illustration"
-              className="w-full h-full sm:w-[70%] rounded-[20px]"
+              className="w-full h-full pl-5 sm:w-[70%] max-sm:rounded-bl-none max-sm:rounded-tr-none rounded-[20px]"
             />
           </div>
         </div>
       </section>
-      {/* section 4 */}
+      {/* Product Grids */}
       <section>
         <div className="mt-12 flex flex-col justify-center items-center px-4">
           <div className="relative text-center">
@@ -310,7 +305,7 @@ export default function Content() {
             operations.
           </p>
 
-          <div className="sm:px-[52px] md:px-[92px] sm:py-[78px] px-[20px] py-[28px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+          <div className="sm:px-[52px] md:px-[92px] sm:py-[78px] px-[20px] py-[28px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 p-4">
             {tiles.map((data, index) => (
               <div
                 key={index}
@@ -332,64 +327,34 @@ export default function Content() {
           </div>
         </div>
       </section>
-      {/* section 5 */}
-      <section className="w-full h-auto sm:h-[300px] px-4 sm:px-[52px] md:px-[92px] bg-[#0F4189] flex flex-col sm:flex-row justify-between items-center space-y-5 sm:space-y-0">
+      {/* Support Section */}
+      <section className="w-full h-auto sm:h-[300px] px-4 sm:px-[42px] md:px-[92px] py-10 bg-[#0F4189] flex flex-col sm:flex-row justify-between items-center space-y-5 sm:space-y-0">
         <div className="w-full sm:w-[640px] text-center sm:text-left">
           <p className="text-[24px] sm:text-[32px] font-gilroy text-[#92B9F0]">
             Dedicated Support,
             <span className="text-white"> When You Need It</span>
           </p>
-          <p className="w-full sm:w-[450px] font-roboto-regular text-xl text-white mt-4">
+          <p className="w-full sm:w-[400px] md:w-[450px] font-roboto-regular text-xl text-white mt-4">
             Our support team is always available to assist with any questions or
             issues, ensuring you get the most out of our platform.
           </p>
           <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 mt-[24px] justify-center sm:justify-start">
             <button
               type="button"
-              className="text-white text-base bg-[#1D5CB7] px-4 py-2 rounded-xl font-roboto-medium text-center"
+              className="text-white text-base bg-[#1D5CB7] hover:bg-blue-800 px-4 py-2 rounded-xl font-roboto-medium text-center"
             >
               Start for Free
             </button>
             <button
               type="button"
-              className="text-white text-base bg-[#0F4189] px-4 py-2 rounded-xl border border-[#538BF3] font-roboto-medium text-center"
+              className="text-white text-base bg-[#0F4189] hover:bg-blue-800 px-4 py-2 rounded-xl border border-[#538BF3] font-roboto-medium text-center"
             >
               Talk to Sales
             </button>
           </div>
         </div>
-        <img src={logo} alt="" className="w-[200px] h-[200px] pb-5" />
+        <img src={logo} alt="" className="w-[200px] h-[200px]" />
       </section>
-      {/* footer */}
-      <footer>
-        <div className="bg-[#1D1F20] flex flex-col-reverse sm:flex-row justify-between items-center px-4 sm:px-[94px] py-[30px]">
-          <div className="flex flex-col space-y-4">
-            <div className="text-[#9098A0] font-roboto-regular text-sm text-center sm:text-left">
-              Connect with us
-            </div>
-            <div className="flex flex-row items-center space-x-[10px]">
-              <img src={phone} alt="Phone" className="w-5 h-5" />
-              <div className="text-white font-roboto-regular text-sm">
-                +91 912 3456 789
-              </div>
-            </div>
-            <div className="flex flex-row items-center space-x-[10px]">
-              <img src={email} alt="Email" className="w-5 h-5" />
-              <div className="text-white font-roboto-regular text-sm">
-                demo@gmail.com
-              </div>
-            </div>
-          </div>
-          <img
-            src={Smrtiw}
-            alt="Logo"
-            className="w-[60px] sm:w-[80px] object-contain py-4"
-          />
-        </div>
-        <p className="bg-[#1D1F20] text-[#9098A0] font-roboto-regular text-xs py-5 text-center border-t border-[#31373D]">
-          © 2024 Smrti Ltd. All rights reserved.
-        </p>
-      </footer>
     </div>
   );
 }

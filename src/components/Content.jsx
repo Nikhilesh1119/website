@@ -33,6 +33,7 @@ import image3 from "../assets/image3.png";
 import image4 from "../assets/image4.png";
 import image5 from "../assets/image5.png";
 import image6 from "../assets/image6.png";
+import ResponsiveCardsMobile from "./ResponsiveCardMobile";
 
 export default function Content() {
   const [selectedOption, setSelectedOption] = useState("build");
@@ -188,7 +189,7 @@ export default function Content() {
       <section>
         <div className="mt-12 flex flex-col justify-center items-center px-4">
           <div className="relative text-center">
-            <p className="text-[40px] sm:text-[72px] font-gilroy w-full sm:w-[810px] sm:leading-[79px] leading-[50px]">
+            <p className="text-[40px] sm:text-[72px] font-gilroy w-full sm:w-[510px] lg:w-[810px] sm:leading-[79px] leading-[50px]">
               One Platform for Your School
             </p>
             <img
@@ -226,7 +227,7 @@ export default function Content() {
       <section>
         <div className="mt-12 flex flex-col justify-center items-center px-4">
           <div className="relative text-center">
-            <p className="text-[32px] sm:text-[52px] font-gilroy w-full sm:w-[810px] sm:leading-[58px] leading-[40px]">
+            <p className="text-[32px] sm:text-[52px] font-gilroy w-full sm:w-[510px] lg:w-[810px] sm:leading-[58px] leading-[40px]">
               An Educational Administration created to be your own.
             </p>
             <img
@@ -240,9 +241,9 @@ export default function Content() {
             school, not the other way around.
           </p>
         </div>
-        <div className="w-full px-4 sm:px-24 ">
-          <div className="px-4 sm:px-[57px] sm:py-[6px] bg-[#F4F5F6] rounded-[20px]">
-            <div className="px-4 sm:px-[40px] sm:py-[36px] bg-white rounded-[20px]">
+        <div className="w-full px-4 lg:px-24 max-md:hidden">
+          <div className="px-4 md:px-[57px] py-3 bg-[#F4F5F6] rounded-[20px]">
+            <div className="px-4 md:px-[40px] py-3 sm:py-[36px] bg-white rounded-[20px]">
               <ResponsiveCards
                 bgImage={bgImage}
                 items={items}
@@ -253,12 +254,21 @@ export default function Content() {
             </div>
           </div>
         </div>
+        <div className="w-full px-4 lg:px-24 md:hidden">
+          <ResponsiveCardsMobile
+            bgImage={bgImage}
+            items={items}
+            views={views}
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+          />
+        </div>
       </section>
       {/* Attendance Section */}
       <section>
         <div className="mt-12 flex flex-col justify-center items-center px-5">
           <div className="relative text-center">
-            <p className="text-[24px] sm:text-[52px] px-5 font-gilroy w-full sm:w-[810px] sm:leading-[58px] leading-[32px]">
+            <p className="text-[24px] sm:text-[52px] px-5 font-gilroy w-full sm:w-[510px] lg:w-[810px] sm:leading-[58px] leading-[32px]">
               Empower Teachers with Smart Attendance Tools
             </p>
             <img
@@ -290,7 +300,7 @@ export default function Content() {
       <section>
         <div className="mt-12 flex flex-col justify-center items-center px-4">
           <div className="relative text-center">
-            <p className="text-[24px] sm:text-[52px] font-gilroy w-full sm:w-[810px] sm:leading-[58px] leading-[32px]">
+            <p className="text-[24px] sm:text-[52px] font-gilroy w-full sm:w-[510px] lg:w-[810px] sm:leading-[58px] leading-[32px]">
               What Makes Our Product Stand Out
             </p>
 
@@ -328,7 +338,7 @@ export default function Content() {
         </div>
       </section>
       {/* Support Section */}
-      <section className="w-full h-auto sm:h-[300px] px-4 sm:px-[42px] md:px-[92px] py-10 bg-[#0F4189] flex flex-col sm:flex-row justify-between items-center space-y-5 sm:space-y-0">
+      <section className="w-full h-auto sm:h-[300px] px-4 sm:px-[32px] md:px-[92px] py-10 bg-[#0F4189] flex flex-col sm:flex-row justify-between items-center space-y-5 sm:space-y-0">
         <div className="w-full sm:w-[640px] text-center sm:text-left">
           <p className="text-[24px] sm:text-[32px] font-gilroy text-[#92B9F0]">
             Dedicated Support,
@@ -353,7 +363,7 @@ export default function Content() {
             </button>
           </div>
         </div>
-        <img src={logo} alt="" className="w-[200px] h-[200px]" />
+        <img src={logo} alt="" className="size-[180px]" />
       </section>
     </div>
   );

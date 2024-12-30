@@ -1,3 +1,5 @@
+import Graphic from "../assets/Graphic.png";
+
 const ResponsiveCards = ({
   bgImage,
   items,
@@ -55,12 +57,7 @@ const ResponsiveCards = ({
       </div>
       {/* selected card data */}
       <div className="flex flex-col w-full justify-center items-center">
-        <img
-          src={bgImage}
-          alt="Main Graphic"
-          className="w-full h-[300px] mt-[64px] rounded-[20px] transition-opacity duration-500"
-        />
-        <div className="relative bottom-[200px] w-full flex justify-center space-x-4 mt-[-80px] z-10">
+        <div className="w-full flex justify-center space-x-4 mt-[80px] z-10">
           {views.map((view, index) => (
             <InfoCard
               key={index}
@@ -71,6 +68,12 @@ const ResponsiveCards = ({
             />
           ))}
         </div>
+        <img
+          src={Graphic}
+          // src={bgImage}
+          alt="Main Graphic"
+          className="absolute h-[300px] mt-[64px] rounded-[20px] transition-opacity duration-500"
+        />
       </div>
     </div>
   );

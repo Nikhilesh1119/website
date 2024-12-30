@@ -1,7 +1,77 @@
 import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import axios from "axios";
 import navbarbg from "../assets/navbarbg.png";
 
 export default function ContactUs() {
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      schoolName: "",
+      email: "",
+      phone: "",
+      state: "",
+      city: "",
+      teachersCount: "",
+      source: "",
+      message: "",
+    },
+    validationSchema: Yup.object({
+      firstName: Yup.string().required("First Name is required"),
+      lastName: Yup.string().required("Last Name is required"),
+      schoolName: Yup.string().required("School Name is required"),
+      // email: Yup.string().email("Invalid email").required("Email is required"),
+      phone: Yup.string()
+        .matches(/^\d+$/, "Phone must contain only numbers")
+        .required("Phone is required"),
+      state: Yup.string().required("State is required"),
+      city: Yup.string().required("City is required"),
+      // teachersCount: Yup.string().required("Number of teachers is required"),
+      // source: Yup.string().required("Source is required"),
+      // message: Yup.string().required("Message is required"),
+    }),
+    onSubmit: async (values) => {
+      try {
+        // const response = await axios.post("/", values);
+        console.log(response);
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
+
+  const renderInput = (
+    name,
+    label,
+    type = "text",
+    placeholder = "",
+    imp = ""
+  ) => (
+    <div className="mb-[35px]">
+      <p className="text-sm font-roboto-medium text-[#374151]">
+        {label} {imp && <span className="text-red-500">*</span>}
+      </p>
+      <input
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        value={formik.values[name]}
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        className={`w-full border-b ${
+          formik.touched[name] && formik.errors[name]
+            ? "border-red-500"
+            : "border-[#8D8D8D]"
+        } font-roboto-medium outline-none text-sm`}
+      />
+      {formik.touched[name] && formik.errors[name] && (
+        <p className="text-red-500 text-xs mt-1">{formik.errors[name]}</p>
+      )}
+    </div>
+  );
+
   return (
     <>
       {/* Navbar Background */}
@@ -26,131 +96,72 @@ export default function ContactUs() {
         {/* Form Section */}
         <div className="w-full md:w-7/12 mt-6 md:mt-0">
           <div className="p-4 sm:p-6 mx-auto">
-            <form className="">
-              {/* First Name and Last Name */}
+            <form onSubmit={formik.handleSubmit}>
               <div className="flex flex-wrap -mx-2">
-                <div className="w-full sm:w-1/2 px-2 mb-[35px]">
-                  <p className="text-sm font-roboto-medium text-[#374151]">
-                    First Name
-                  </p>
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    className="w-full border-b border-[#8D8D8D] font-roboto-medium outline-none text-sm"
-                  />
+                <div className="w-full sm:w-1/2 px-2">
+                  {renderInput(
+                    "firstName",
+                    "First Name",
+                    "text",
+                    "First Name",
+                    "imp"
+                  )}
                 </div>
-                <div className="w-full sm:w-1/2 px-2 mb-[35px]">
-                  <p className="text-sm font-roboto-medium text-[#374151]">
-                    Last Name
-                  </p>
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    className="w-full border-b border-[#8D8D8D] outline-none text-sm"
-                  />
+                <div className="w-full sm:w-1/2 px-2">
+                  {renderInput(
+                    "lastName",
+                    "Last Name",
+                    "text",
+                    "Last Name",
+                    "imp"
+                  )}
                 </div>
               </div>
-
-              {/* School Name */}
-              <div className="mb-[35px]">
-                <p className="text-sm font-roboto-medium text-[#374151]">
-                  School Name
-                </p>
-                <input
-                  type="text"
-                  placeholder="School Name"
-                  className="w-full border-b border-[#8D8D8D] outline-none text-sm"
-                />
-              </div>
-
-              {/* Email and Phone */}
+              {renderInput(
+                "schoolName",
+                "School Name",
+                "text",
+                "School Name",
+                "imp"
+              )}
               <div className="flex flex-wrap -mx-2">
-                <div className="w-full sm:w-1/2 px-2 mb-[35px]">
-                  <p className="text-sm font-roboto-medium text-[#374151]">
-                    Email
-                  </p>
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="w-full border-b border-[#8D8D8D] outline-none text-sm"
-                  />
+                <div className="w-full sm:w-1/2 px-2">
+                  {renderInput("email", "Email", "email", "Email")}
                 </div>
-                <div className="w-full sm:w-1/2 px-2 mb-[35px]">
-                  <p className="text-sm font-roboto-medium text-[#374151]">
-                    Phone Number
-                  </p>
-                  <input
-                    type="text"
-                    placeholder="Phone"
-                    className="w-full border-b border-[#8D8D8D] outline-none text-sm"
-                  />
+                <div className="w-full sm:w-1/2 px-2">
+                  {renderInput("phone", "Phone Number", "text", "Phone", "imp")}
                 </div>
               </div>
-
-              {/* State and City */}
               <div className="flex flex-wrap -mx-2">
-                <div className="w-full sm:w-1/2 px-2 mb-[35px]">
-                  <p className="text-sm font-roboto-medium text-[#374151]">
-                    State
-                  </p>
-                  <input
-                    type="text"
-                    placeholder="State"
-                    className="w-full border-b border-[#8D8D8D] outline-none text-sm"
-                  />
+                <div className="w-full sm:w-1/2 px-2">
+                  {renderInput("state", "State", "text", "State", "imp")}
                 </div>
-                <div className="w-full sm:w-1/2 px-2 mb-[35px]">
-                  <p className="text-sm font-roboto-medium text-[#374151]">
-                    City
-                  </p>
-                  <input
-                    type="text"
-                    placeholder="City"
-                    className="w-full border-b border-[#8D8D8D] outline-none text-sm"
-                  />
+                <div className="w-full sm:w-1/2 px-2">
+                  {renderInput("city", "City", "text", "City", "imp")}
                 </div>
               </div>
-
-              {/* No of Teachers and Source */}
               <div className="flex flex-wrap -mx-2">
-                <div className="w-full sm:w-1/2 px-2 mb-[35px]">
-                  <p className="text-sm font-roboto-medium text-[#374151]">
-                    No of Teachers
-                  </p>
-                  <input
-                    type="text"
-                    placeholder="No. of Teachers"
-                    className="w-full border-b border-[#8D8D8D] outline-none text-sm"
-                  />
+                <div className="w-full sm:w-1/2 px-2">
+                  {renderInput(
+                    "teachersCount",
+                    "No of Teachers",
+                    "text",
+                    "No. of Teachers"
+                  )}
                 </div>
-                <div className="w-full sm:w-1/2 px-2 mb-[35px]">
-                  <p className="text-sm font-roboto-medium text-[#374151]">
-                    How Did You Get to Know About Us?
-                  </p>
-                  <input
-                    type="text"
-                    placeholder="Source"
-                    className="w-full border-b border-[#8D8D8D] outline-none text-sm"
-                  />
+                <div className="w-full sm:w-1/2 px-2">
+                  {renderInput(
+                    "source",
+                    "How Did You Get to Know About Us?",
+                    "text",
+                    "Source"
+                  )}
                 </div>
               </div>
-
-              {/* Message */}
-              <div className="mb-[35px]">
-                <p className="text-sm font-roboto-medium text-[#374151]">
-                  Message
-                </p>
-                <textarea
-                  placeholder="Message"
-                  className="w-full border-b border-[#8D8D8D] outline-none text-sm resize-none"
-                  rows="4"
-                />
-              </div>
-
-              {/* Submit Button */}
+              {renderInput("message", "Message", "textarea", "Message")}
               <div className="flex justify-center md:justify-end">
                 <button
-                  type="button"
+                  type="submit"
                   className="text-base px-6 py-2 rounded-xl font-medium text-white bg-[#0F4189] hover:bg-blue-800"
                 >
                   Start for Free

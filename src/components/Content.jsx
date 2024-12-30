@@ -34,6 +34,7 @@ import image4 from "../assets/image4.png";
 import image5 from "../assets/image5.png";
 import image6 from "../assets/image6.png";
 import ResponsiveCardsMobile from "./ResponsiveCardMobile";
+import { Link } from "react-router-dom";
 
 export default function Content() {
   const [selectedOption, setSelectedOption] = useState("build");
@@ -203,18 +204,20 @@ export default function Content() {
             in one simple platform.
           </p>
           <div className="flex w-[280px] justify-around">
-            <button
-              type="button"
+            <a
+              href="https://admin.nisaiji.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white text-base bg-[#0F4189] hover:bg-blue-800 px-4 py-2 rounded-xl font-roboto-medium mt-2 text-center"
             >
               Start for Free
-            </button>
-            <button
-              type="button"
+            </a>
+            <Link
+              to="/contact"
               className="text-black text-base bg-[#ffffff] px-4 py-2 rounded-xl border border-[#edeef0] font-roboto-medium mt-2 text-center"
             >
               Talk to sales
-            </button>
+            </Link>
           </div>
         </div>
         <img
@@ -349,18 +352,20 @@ export default function Content() {
             issues, ensuring you get the most out of our platform.
           </p>
           <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 mt-[24px] justify-center sm:justify-start">
-            <button
-              type="button"
+            <a
+              href="https://admin.nisaiji.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-white text-base bg-[#1D5CB7] hover:bg-blue-800 px-4 py-2 rounded-xl font-roboto-medium text-center"
             >
               Start for Free
-            </button>
-            <button
-              type="button"
+            </a>
+            <Link
+              to="/contact"
               className="text-white text-base bg-[#0F4189] hover:bg-blue-800 px-4 py-2 rounded-xl border border-[#538BF3] font-roboto-medium text-center"
             >
               Talk to Sales
-            </button>
+            </Link>
           </div>
         </div>
         <img src={logo} alt="" className="size-[180px]" />

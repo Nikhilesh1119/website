@@ -33,8 +33,10 @@ export default function Navbar() {
         >
           Contact Us
         </Link>
-        <button
-          type="button"
+        <a
+          href="https://admin.nisaiji.com/"
+          target="_blank"
+          rel="noopener noreferrer"
           className={`text-base  px-4 py-2 rounded-xl font-medium ${
             isContactPage
               ? "text-black bg-white hover:bg-slate-100"
@@ -42,7 +44,7 @@ export default function Navbar() {
           }`}
         >
           Start for Free
-        </button>
+        </a>
       </div>
 
       {/* Mobile Menu Toggle */}
@@ -72,9 +74,14 @@ export default function Navbar() {
           >
             Contact Us
           </Link>
-          <div className="text-white text-base bg-[#1D5CB7] mx-10 py-2 rounded-xl font-roboto-medium mt-2 hover:bg-blue-800 transition-all duration-700 ease-in-out w-full text-center">
+          <a
+            href="https://admin.nisaiji.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white text-base bg-[#1D5CB7] mx-10 py-2 rounded-xl font-roboto-medium mt-2 hover:bg-blue-800 transition-all duration-700 ease-in-out w-full text-center"
+          >
             Start for Free
-          </div>
+          </a>
         </div>
       </div>
     </div>

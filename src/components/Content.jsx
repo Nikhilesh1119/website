@@ -185,7 +185,7 @@ export default function Content() {
   ];
 
   return (
-    <div>
+    <div className="select-none">
       {/* Intro */}
       <section>
         <div className="mt-12 flex flex-col justify-center items-center px-4">
@@ -329,7 +329,7 @@ export default function Content() {
                   alt={`Tile ${index + 1}`}
                   className="w-16 h-16"
                 />
-                <h2 className="text-[16px] font-semibold my-2 sm:my-[16px]">
+                <h2 className="text-[16px] font-semibold my-2 sm:my-[8px]">
                   {data.heading}
                 </h2>
                 <p className="text-[18px] text-gray-600 text-center sm:text-left">

@@ -13,7 +13,7 @@ export default function Navbar() {
   const isContactPage = location.pathname === "/contact";
 
   return (
-    <div className="relative h-24 w-full px-6 py-4 bg-transparent flex flex-row justify-between items-center z-10">
+    <div className="relative select-none h-24 w-full px-6 py-4 bg-transparent flex flex-row justify-between items-center z-10">
       {/* Logo */}
       <Link to="/">
         <img

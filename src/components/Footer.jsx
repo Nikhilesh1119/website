@@ -6,7 +6,7 @@ import Smrtiw from "../assets/Smrtiw.png";
 export default function Footer() {
   return (
     <footer>
-      <div className="bg-[#1D1F20] flex flex-col-reverse sm:flex-row justify-between items-center px-4 sm:px-[94px] py-[30px]">
+      <div className="bg-[#1D1F20] select-none flex flex-col-reverse sm:flex-row justify-between items-center px-4 sm:px-[94px] py-[30px]">
         <div className="flex flex-col space-y-4">
           <div className="text-[#9098A0] font-roboto-regular text-sm text-center sm:text-left">
             Connect with us

@@ -28,7 +28,7 @@ const ResponsiveCards = ({
         {items.map((item) => (
           <div
             key={item.key}
-            className={`px-[10px] py-[10px] cursor-pointer transition-all duration-300 ${
+            className={`px-[12px] py-[10px] cursor-pointer transition-all duration-300 ${
               selectedOption === item.key
                 ? "text-black scale-105 shadow-lg rounded-lg"
                 : "text-[#9098A0] scale-100"

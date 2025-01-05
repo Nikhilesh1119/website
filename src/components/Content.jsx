@@ -57,7 +57,7 @@ export default function Content() {
     },
     {
       key: "analytic",
-      label: "Analitics",
+      label: "Analytics",
       description:
         "Access instant insights into attendance patterns and class trends.",
       icon: analitic,
@@ -199,7 +199,7 @@ export default function Content() {
               className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[70px] top-[45px]"
             />
           </div>
-          <p className="text-[20px] sm:text-[24px] font-roboto-regular w-full sm:w-[548px] text-center my-8">
+          <p className="text-[20px] sm:text-[24px] text-[#31373D] font-roboto-regular w-full sm:w-[548px] text-center my-8">
             Easily manage classes, track attendance, and get real-time insights
             in one simple platform.
           </p>
@@ -214,7 +214,7 @@ export default function Content() {
             </a>
             <Link
               to="/contact"
-              className="text-black text-base bg-[#ffffff] px-4 py-2 rounded-xl border border-[#edeef0] font-roboto-medium mt-2 text-center"
+              className="text-black text-base bg-[#ffffff] px-4 py-2 rounded-xl border border-[#edeef0] hover:text-[#FF793F] font-roboto-medium mt-2 text-center"
             >
               Talk to sales
             </Link>
@@ -239,7 +239,7 @@ export default function Content() {
               className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[55px] top-[40px]"
             />
           </div>
-          <p className="text-[18px] sm:text-[22px] font-roboto-regular w-full sm:w-[548px] text-center my-8">
+          <p className="text-[18px] sm:text-[22px] text-[#31373D] font-roboto-regular w-full sm:w-[548px] text-center my-8">
             Tweak anything and everything to ensure our platform fits your
             school, not the other way around.
           </p>
@@ -280,15 +280,15 @@ export default function Content() {
               className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[55px] top-[30px]"
             />
           </div>
-          <p className="text-[16px] sm:text-[22px] font-roboto-regular w-full sm:w-[548px] text-center my-6 sm:my-8">
+          <p className="text-[16px] sm:text-[22px] text-[#31373D] font-roboto-regular w-full sm:w-[548px] text-center my-6 sm:my-8">
             Effortless attendance tracking and real-time insights keep you
             organized and focused on your students.
           </p>
 
           <div className="w-full max-w-[1138px] border border-[#D3D5D9] h-[400px] sm:h-[504px] sm:pl-10 pt-6 sm:pt-10 rounded-[20px] flex flex-col sm:flex-row justify-between sm:space-x-6">
-            <p className="w-full sm:w-[382px] px-5 text-sm sm:text-lg font-roboto-regular text-center sm:text-left mb-4 sm:mb-0">
+            <p className="w-full sm:w-[382px] px-5 text-sm sm:text-lg text-[#31373D] font-roboto-regular text-center sm:text-left mb-4 sm:mb-0">
               Quickly
-              <b> mark attendance, access student data, and monitor trends</b>
+              <b> mark attendance, access student data, and monitor trends </b>
               with just a few taps, all in one intuitive app.
             </p>
             <img
@@ -313,7 +313,7 @@ export default function Content() {
               className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[50px] top-[30px]"
             />
           </div>
-          <p className="text-[16px] sm:text-[22px] font-roboto-regular w-full sm:w-[548px] text-center my-6 sm:my-8">
+          <p className="text-[16px] sm:text-[22px] text-[#31373D] font-roboto-regular w-full sm:w-[548px] text-center my-6 sm:my-8">
             A unified platform to centralize, secure, and simplify educational
             operations.
           </p>
@@ -329,10 +329,10 @@ export default function Content() {
                   alt={`Tile ${index + 1}`}
                   className="w-16 h-16"
                 />
-                <h2 className="text-[16px] font-semibold my-2 sm:my-[8px]">
+                <h2 className="text-[18px] font-semibold my-2 sm:my-[8px]">
                   {data.heading}
                 </h2>
-                <p className="text-[18px] text-gray-600 text-center sm:text-left">
+                <p className="text-[16px] text-gray-600 text-center sm:text-left">
                   {data.paragraph}
                 </p>
               </div>
@@ -347,7 +347,7 @@ export default function Content() {
             Dedicated Support,
             <span className="text-white"> When You Need It</span>
           </p>
-          <p className="w-full sm:w-[400px] md:w-[450px] font-roboto-regular text-xl text-white mt-4">
+          <p className="w-full sm:w-[400px] md:w-[450px] font-roboto-regular text--sm text-white mt-4">
             Our support team is always available to assist with any questions or
             issues, ensuring you get the most out of our platform.
           </p>
@@ -362,7 +362,7 @@ export default function Content() {
             </a>
             <Link
               to="/contact"
-              className="text-white text-base bg-[#0F4189] hover:bg-blue-800 px-4 py-2 rounded-xl border border-[#538BF3] font-roboto-medium text-center"
+              className="text-white text-base bg-[#0F4189] hover:border-[#FFFFFF] px-4 py-2 rounded-xl border border-[#538BF3] font-roboto-medium text-center"
             >
               Talk to Sales
             </Link>

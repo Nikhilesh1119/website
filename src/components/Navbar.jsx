@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Smrti from "../assets/Smrti.png";
 import Smrtiw from "../assets/Smrtiw.png";
 import Menu from "../assets/Menu.png";
+import Menuw from "../assets/Menuw.png";
 import cross from "../assets/cross.png";
 import { Link, useLocation } from "react-router-dom";
 
@@ -52,7 +53,9 @@ export default function Navbar() {
         <img
           src={isMenuOpen ? cross : Menu}
           alt="Menu Icon"
-          className="w-[32px] h-[32px] cursor-pointer"
+          className={`w-[32px] h-[32px] cursor-pointer ${
+            isContactPage ? "invert" : ""
+          }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         />
       </div>
@@ -70,11 +73,13 @@ export default function Navbar() {
         <div className="flex flex-col items-center p-4">
           <Link
             to="/contact"
+            onClick={() => setIsMenuOpen(false)}
             className="text-[#FF793F] text-base px-4 py-2 font-roboto-medium hover:text-orange-400 hover:transition-colors hover::duration-700 w-full text-center"
           >
             Contact Us
           </Link>
           <a
+            onClick={() => setIsMenuOpen(false)}
             href="https://admin.nisaiji.com/"
             target="_blank"
             rel="noopener noreferrer"

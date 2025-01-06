@@ -71,7 +71,7 @@ const ResponsiveCardsMobile = ({ items, views }) => {
               <div className="bg-white rounded-[20px] p-4">
                 {/* Header Section */}
                 <div className="flex items-center space-x-2">
-                  <img src={item.icon} alt={item.label} className="w-6 h-6" />
+                  <img src={item.icon} alt={item.label} className="size-6" />
                   <div>
                     <h3 className="text-lg font-medium">{item.label}</h3>
                     <p className="text-sm text-black">{item.description}</p>

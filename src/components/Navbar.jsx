@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Smrti from "../assets/Smrti.png";
 import Smrtiw from "../assets/Smrtiw.png";
-import Menu from "../assets/Menu.png";
+import Menu from "../assets/menu.png";
 import cross from "../assets/cross.png";
 import { Link, useLocation } from "react-router-dom";
 

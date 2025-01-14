@@ -131,20 +131,6 @@ export default function Content() {
 
   const { bgImage, views } = optionsData[selectedOption];
 
-  const InfoCard = ({ icon, title, description, isVisible }) => (
-    <div
-      className={`w-[230px] flex flex-col items-center px-2 py-2 bg-transparent transition-opacity duration-500 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
-    >
-      <img src={icon} alt={title} className="w-16 h-16 mb-2" />
-      <h2 className="text-xl font-gilroy text-center my-4">{title}</h2>
-      <p className="text-base font-roboto-regular text-center text-gray-600">
-        {description}
-      </p>
-    </div>
-  );
-
   const tiles = [
     {
       image: image1,
@@ -285,7 +271,7 @@ export default function Content() {
             organized and focused on your students.
           </p>
 
-          <div className="w-full max-w-[1138px] border border-[#D3D5D9] h-[400px] sm:h-[504px] sm:pl-10 pt-6 sm:pt-10 rounded-[20px] flex flex-col sm:flex-row justify-between sm:space-x-6">
+          <div className="w-full max-w-[1138px] border border-[#D3D5D9] h-[500px] sm:h-[504px] sm:pl-10 pt-6 sm:pt-10 rounded-[20px] flex flex-col sm:flex-row justify-between sm:space-x-6">
             <p className="w-full sm:w-[382px] px-5 text-sm sm:text-lg text-[#31373D] font-roboto-regular text-center sm:text-left mb-4 sm:mb-0">
               Quickly
               <b> mark attendance, access student data, and monitor trends </b>
@@ -294,7 +280,7 @@ export default function Content() {
             <img
               src={attendance}
               alt="Attendance illustration"
-              className="w-full h-full pl-5 sm:w-[70%] max-sm:rounded-bl-none max-sm:rounded-tr-none rounded-[20px]"
+              className="w-full h-full sm:w-[70%] max-sm:rounded-tr-none rounded-[20px] object-fill"
             />
           </div>
         </div>

@@ -1,7 +1,12 @@
 import React, { useState, useRef } from "react";
-import GraphicMobile from "../assets/GraphicMobile.png";
+import GraphicMobile from "../assets/Graphic.png";
 
-const ResponsiveCardsMobile = ({ items, views }) => {
+const ResponsiveCardsMobile = ({
+  items,
+  views,
+  selectedOption,
+  setSelectedOption,
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [startX, setStartX] = useState(null);
   const containerRef = useRef(null);
@@ -36,18 +41,23 @@ const ResponsiveCardsMobile = ({ items, views }) => {
 
   const handleNext = () => {
     if (currentIndex < items.length - 1) {
-      setCurrentIndex((prevIndex) => prevIndex + 1);
+      const newIndex = currentIndex + 1;
+      setCurrentIndex(newIndex);
+      setSelectedOption(items[newIndex].key);
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
-      setCurrentIndex((prevIndex) => prevIndex - 1);
+      const newIndex = currentIndex - 1;
+      setCurrentIndex(newIndex);
+      setSelectedOption(items[newIndex].key);
     }
   };
 
   const handleDotClick = (index) => {
     setCurrentIndex(index);
+    setSelectedOption(items[index].key);
   };
 
   return (
@@ -85,7 +95,7 @@ const ResponsiveCardsMobile = ({ items, views }) => {
                     alt="Main Graphic"
                     className="h-[200px] w-full rounded-lg transition-opacity duration-500 object-cover"
                   />
-                  <div className="absolute inset-0 flex pl-[15%] justify-end items-start mt-5 space-x-2 z-10">
+                  <div className="absolute inset-0 flex justify-end items-start mt-5 space-x-2 z-10">
                     {views.map((view, idx) => (
                       <div
                         key={idx}

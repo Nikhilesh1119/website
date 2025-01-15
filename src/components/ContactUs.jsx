@@ -38,18 +38,23 @@ export default function ContactUs() {
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
-        const response = await axios.post(
-          "http://93.127.166.31:4002/user-queries",
-          values
+        // Remove fields with empty values
+        const filteredValues = Object.fromEntries(
+          Object.entries(values).filter(([_, value]) => value !== "")
         );
-        if (response.data.statusCode === 200) {
+        const response = await axios.post(
+          "http://localhost:4000/customer-support/query",
+          filteredValues
+        );
+
+        if (response?.data?.statusCode === 200) {
           toast.success(response?.data?.msg);
           resetForm();
-        } else if (response.data.statusCode === 500) {
+        } else if (response?.data?.statusCode === 500) {
           toast.error(e);
         }
       } catch (e) {
-        toast.error(e);
+        toast.error(e?.response?.data?.message);
       }
     },
   });

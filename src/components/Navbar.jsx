@@ -39,7 +39,7 @@ export default function Navbar() {
           rel="noopener noreferrer"
           className={`text-base  px-4 py-2 rounded-xl font-medium ${
             isContactPage
-              ? "text-black bg-white hover:bg-slate-100"
+              ? "text-black bg-white hover:bg-[#0F4189] hover:text-white"
               : "text-white bg-[#0F4189] hover:bg-blue-800"
           }`}
         >

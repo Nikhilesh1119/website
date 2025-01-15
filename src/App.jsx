@@ -4,8 +4,11 @@ import Content from "./components/Content";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ContactUs from "./components/ContactUs";
+import LocomotiveScroll from "locomotive-scroll";
 
 function App() {
+  const locomotiveScroll = new LocomotiveScroll();
+
   return (
     <>
       <BrowserRouter>

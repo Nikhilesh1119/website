@@ -96,17 +96,17 @@ export default function ContactUs() {
       <img
         src={navbarbg}
         alt="Background"
-        className="w-full h-[100px] sm:h-[200px] absolute top-0 object-cover"
+        className="w-full h-[100px] sm:h-[150px] absolute top-0 object-cover"
       />
       <Toaster />
       {/* Main Container */}
-      <div className="mt-[40px] sm:mt-[96px] p-4 sm:p-10 flex flex-col md:flex-row">
+      <div className="mt-[40px] sm:mt-[72px] p-4 sm:p-10 flex flex-col md:flex-row">
         {/* Text Section */}
-        <div className="px-2 sm:px-[40px] lg:px-[70px] w-full md:w-5/12 text-center md:text-left">
+        <div className="px-2 sm:px-[32px] lg:px-[46px] w-full md:w-5/12 text-center md:text-left">
           <div className="text-[36px] md:text-[46px] font-gilroy leading-[1.2]">
             Have questions or need assistance?
           </div>
-          <div className="mt-4 px-2 text-[20px] sm:text-[24px] font-roboto-regular">
+          <div className="mt-4 text-[18px] sm:text-[20px] font-roboto-regular">
             We're here to help—reach out to us today!
           </div>
         </div>

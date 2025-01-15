@@ -270,18 +270,19 @@ export default function Content() {
             Effortless attendance tracking and real-time insights keep you
             organized and focused on your students.
           </p>
-
-          <div className="w-full max-w-[1138px] border border-[#D3D5D9] h-[500px] sm:h-[504px] sm:pl-10 pt-6 sm:pt-10 rounded-[20px] flex flex-col sm:flex-row justify-between sm:space-x-6">
+          <div className="w-full max-w-[1138px] border border-[#D3D5D9] sm:h-[504px] h-auto sm:pl-10 pt-6 sm:pt-10 rounded-[20px] flex flex-col sm:flex-row justify-between sm:space-x-6">
             <p className="w-full sm:w-[382px] px-5 text-sm sm:text-lg text-[#31373D] font-roboto-regular text-center sm:text-left mb-4 sm:mb-0">
               Quickly
               <b> mark attendance, access student data, and monitor trends </b>
               with just a few taps, all in one intuitive app.
             </p>
-            <img
-              src={attendance}
-              alt="Attendance illustration"
-              className="w-full h-full sm:w-[70%] max-sm:rounded-tr-none rounded-[20px] object-fill"
-            />
+            <div className="w-full sm:w-[70%] h-[300px] sm:h-auto rounded-[20px] overflow-hidden">
+              <img
+                src={attendance}
+                alt="Attendance illustration"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>

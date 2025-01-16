@@ -5,6 +5,7 @@ import logo from "../assets/logo.png";
 import section1 from "../assets/section1.png";
 import underline from "../assets/underline.png";
 import attendance from "../assets/attendance.png";
+import attendance_m from "../assets/attendance_m.png";
 
 import build from "../assets/build.png";
 import manage from "../assets/manage.png";
@@ -287,11 +288,14 @@ export default function Content() {
               with just a few taps, all in one intuitive app.
             </p>
             <div className="w-full sm:w-[70%] h-[300px] sm:h-auto rounded-[20px] overflow-hidden">
-              <img
-                src={attendance}
-                alt="Attendance illustration"
-                className="w-full h-full object-cover"
-              />
+              {/* <picture>
+                <source media="(max-width: 640px)" srcSet={attendance_m} /> */}
+                <img
+                  src={attendance_m}
+                  alt="Attendance illustration"
+                  className="w-full h-full object-cover"
+                />
+              {/* </picture> */}
             </div>
           </div>
         </div>

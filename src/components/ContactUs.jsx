@@ -15,7 +15,7 @@ export default function ContactUs() {
       phone: "",
       state: "",
       city: "",
-      teachersCount: "",
+      teacherCount: "",
       source: "",
       message: "",
     },
@@ -32,7 +32,7 @@ export default function ContactUs() {
         .required("Phone is required"),
       state: Yup.string().required("State is required"),
       city: Yup.string().required("City is required"),
-      // teachersCount: Yup.string().required("Number of teachers is required"),
+      // teacherCount: Yup.string().required("Number of teachers is required"),
       // source: Yup.string().required("Source is required"),
       // message: Yup.string().required("Message is required"),
     }),
@@ -161,7 +161,7 @@ export default function ContactUs() {
               <div className="flex flex-wrap -mx-2">
                 <div className="w-full sm:w-1/2 px-2">
                   {renderInput(
-                    "teachersCount",
+                    "teacherCount",
                     "No of Teachers",
                     "text",
                     "No. of Teachers"

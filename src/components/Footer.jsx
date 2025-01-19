@@ -14,15 +14,15 @@ export default function Footer() {
           <div className="flex flex-row items-center space-x-[10px]">
             <img src={phone} alt="Phone" className="w-5 h-5" />
             <div className="text-white font-roboto-regular text-sm">
-              +91 912 3456 789
+              +91 971 3411 511
             </div>
           </div>
-          <div className="flex flex-row items-center space-x-[10px]">
+          {/* <div className="flex flex-row items-center space-x-[10px]">
             <img src={email} alt="Email" className="w-5 h-5" />
             <div className="text-white font-roboto-regular text-sm">
               demo@gmail.com
             </div>
-          </div>
+          </div> */}
         </div>
         <img
           src={Smrtiw}

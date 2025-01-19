@@ -184,7 +184,7 @@ export default function Content() {
             <motion.img
               initial={{ width: 0 }}
               whileInView={{ width: "70%" }}
-              transition={{ ease: [0.5, 1, 0.89, 1], duration: 2 }}
+              transition={{ ease: [0.5, 1, 0.89, 1], duration: 1 }}
               src={underline}
               alt=""
               className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[70px] top-[46px]"
@@ -227,7 +227,7 @@ export default function Content() {
             <motion.img
               initial={{ width: 0 }}
               whileInView={{ width: "60%" }}
-              transition={{ ease: [0.5, 1, 0.89, 1], duration: 2 }}
+              transition={{ ease: [0.5, 1, 0.89, 1], duration: 1 }}
               src={underline}
               alt=""
               className="absolute sm:w-[70%] w-[50%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[55px] top-[32px]"
@@ -271,7 +271,7 @@ export default function Content() {
             <motion.img
               initial={{ width: 0 }}
               whileInView={{ width: "70%" }}
-              transition={{ ease: [0.5, 1, 0.89, 1], duration: 2 }}
+              transition={{ ease: [0.5, 1, 0.89, 1], duration: 1 }}
               src={underline}
               alt=""
               className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[112px] top-[104px]"
@@ -302,7 +302,7 @@ export default function Content() {
       </section>
       {/* Product Grids */}
       <section>
-        <div className="mt-20 flex flex-col justify-center items-center px-4">
+        <div className="mt-24 flex flex-col justify-center items-center px-4">
           <div className="relative text-center">
             <p className="text-[32px] sm:text-[52px] font-gilroy w-full sm:w-[510px] lg:w-[720px] sm:leading-[58px] leading-[36px]">
               What Makes Our Product Stand Out
@@ -311,7 +311,7 @@ export default function Content() {
             <motion.img
               initial={{ width: 0 }}
               whileInView={{ width: "60%" }}
-              transition={{ ease: [0.5, 1, 0.89, 1], duration: 2 }}
+              transition={{ ease: [0.5, 1, 0.89, 1], duration: 1 }}
               src={underline}
               alt=""
               className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[52px] top-[32px]"
@@ -319,14 +319,14 @@ export default function Content() {
           </div>
           <p className="text-[18px] sm:text-[22px] text-[#31373D] font-roboto-regular w-full sm:w-[548px] text-center my-6 sm:my-4">
             A unified platform to centralize, secure, and simplify educational
-            operations.
+            operations.duration
           </p>
 
           <div className="sm:px-[52px] md:px-[92px] sm:py-[78px] px-[20px] py-[28px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 p-4">
             {tiles.map((data, index) => (
               <div
                 key={index}
-                className="p-4 bg-white rounded-lg sm:shadow-[0_4px_10px_rgba(0,0,0,0.1)] flex flex-col items-center sm:items-start transition-all duration-300 hover:scale-105"
+                className="p-4 bg-white rounded-lg sm:shadow-[0_4px_10px_rgba(0,0,0,0.1)] flex flex-col items-center sm:items-start transition-all -300 hover:scale-105"
               >
                 <img
                   src={data.image}

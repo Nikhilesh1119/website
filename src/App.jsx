@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useEffect } from "react";
 import "./App.css";
 import Content from "./components/Content";
 import Navbar from "./components/Navbar";
@@ -7,7 +8,10 @@ import ContactUs from "./components/ContactUs";
 import LocomotiveScroll from "locomotive-scroll";
 
 function App() {
-  const locomotiveScroll = new LocomotiveScroll();
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+  });
 
   return (
     <>

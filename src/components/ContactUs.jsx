@@ -43,7 +43,7 @@ export default function ContactUs() {
           Object.entries(values).filter(([_, value]) => value !== "")
         );
         const response = await axios.post(
-          "http://localhost:4000/customer-support/query",
+          "https://nisaiji.com/customer-support/query",
           filteredValues
         );
 

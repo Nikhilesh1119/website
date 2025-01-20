@@ -42,10 +42,10 @@ export default function ContactUs() {
         const filteredValues = Object.fromEntries(
           Object.entries(values).filter(([_, value]) => value !== "")
         );
-        const response = await axios.post(
-          "https://nisaiji.com/customer-support/query",
-          filteredValues
-        );
+        const url = "https://nisaiji.com/customer-support/query";
+        // const url = "http://localhost:4000/customer-support/query";
+
+        const response = await axios.post(url, filteredValues);
 
         if (response?.data?.statusCode === 200) {
           toast.success(response?.data?.msg);

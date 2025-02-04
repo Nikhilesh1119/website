@@ -16,11 +16,18 @@ export default function Navbar() {
     <div className="relative select-none h-24 w-full px-6 py-4 bg-transparent flex flex-row justify-between items-center z-10">
       {/* Logo */}
       <Link to="/">
-        <img
+        {/* <img
           src={isContactPage ? Smrtiw : Smrti}
           alt="Logo"
           className="w-[80px] h-[35px] cursor-pointer object-contain transition-all duration-300"
-        />
+        /> */}
+        <span
+          className={`text-3xl font-bold font-roboto cursor-pointer ${
+            isContactPage ? "text-white" : "text-black"
+          }`}
+        >
+          SharedRI
+        </span>
       </Link>
 
       {/* Desktop Buttons */}
@@ -34,7 +41,7 @@ export default function Navbar() {
           Contact Us
         </Link>
         <a
-          href="https://admin.nisaiji.com/"
+          href="https://admin.sharedri.com"
           target="_blank"
           rel="noopener noreferrer"
           className={`text-base  px-4 py-2 rounded-xl font-medium ${
@@ -79,7 +86,7 @@ export default function Navbar() {
           </Link>
           <a
             onClick={() => setIsMenuOpen(false)}
-            href="https://admin.nisaiji.com/"
+            href="https://admin.sharedri.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white text-base bg-[#1D5CB7] mx-10 py-2 rounded-xl font-roboto-medium mt-2 hover:bg-blue-800 transition-all duration-700 ease-in-out w-full text-center"

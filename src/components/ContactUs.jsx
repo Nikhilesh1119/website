@@ -42,7 +42,7 @@ export default function ContactUs() {
         const filteredValues = Object.fromEntries(
           Object.entries(values).filter(([_, value]) => value !== "")
         );
-        const url = "https://nisaiji.com/customer-support/query";
+        const url = "https://api.sharedri.com/customer-support/query";
         // const url = "http://localhost:4000/customer-support/query";
 
         const response = await axios.post(url, filteredValues);

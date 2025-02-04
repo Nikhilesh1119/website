@@ -26,11 +26,14 @@ export default function Footer() {
             </div>
           </div> */}
         </div>
-        <img
+        <span className="text-3xl font-bold font-roboto text-white">
+          SharedRI
+        </span>
+        {/* <img
           src={Smrtiw}
           alt="Logo"
           className="w-[60px] sm:w-[80px] object-contain py-4"
-        />
+        /> */}
       </div>
       <p className="bg-[#1D1F20] text-[#9098A0] font-roboto-regular text-xs py-5 text-center border-t border-[#31373D]">
         © 2024 Smrti Ltd. All rights reserved.

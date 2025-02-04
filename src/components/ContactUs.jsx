@@ -3,41 +3,58 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import navbarbg from "../assets/navbarbg.png";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function ContactUs() {
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
+      firstname: "",
+      lastname: "",
       schoolName: "",
       email: "",
       phone: "",
       state: "",
       city: "",
-      teachersCount: "",
+      teacherCount: "",
       source: "",
       message: "",
     },
     validationSchema: Yup.object({
-      firstName: Yup.string().required("First Name is required"),
-      lastName: Yup.string().required("Last Name is required"),
+      firstname: Yup.string().required("First Name is required"),
+      lastname: Yup.string().required("Last Name is required"),
       schoolName: Yup.string().required("School Name is required"),
       // email: Yup.string().email("Invalid email").required("Email is required"),
       phone: Yup.string()
-        .matches(/^\d+$/, "Phone must contain only numbers")
+        .matches(
+          /^[6-9]\d{9}$/,
+          "Phone must start with 6-9 and be 10 digits long"
+        )
         .required("Phone is required"),
       state: Yup.string().required("State is required"),
       city: Yup.string().required("City is required"),
-      // teachersCount: Yup.string().required("Number of teachers is required"),
+      // teacherCount: Yup.string().required("Number of teachers is required"),
       // source: Yup.string().required("Source is required"),
       // message: Yup.string().required("Message is required"),
     }),
-    onSubmit: async (values) => {
+    onSubmit: async (values, { resetForm }) => {
       try {
-        // const response = await axios.post("/", values);
-        console.log(response);
+        // Remove fields with empty values
+        const filteredValues = Object.fromEntries(
+          Object.entries(values).filter(([_, value]) => value !== "")
+        );
+        const url = "https://api.sharedri.com/customer-support/query";
+        // const url = "http://localhost:4000/customer-support/query";
+
+        const response = await axios.post(url, filteredValues);
+
+        if (response?.data?.statusCode === 200) {
+          toast.success(response?.data?.msg);
+          resetForm();
+        } else if (response?.data?.statusCode === 500) {
+          toast.error(e);
+        }
       } catch (e) {
-        console.error(e);
+        toast.error(e?.response?.data?.message);
       }
     },
   });
@@ -60,6 +77,7 @@ export default function ContactUs() {
         value={formik.values[name]}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
+        maxLength={name === "phone" ? 10 : ""}
         className={`w-full border-b ${
           formik.touched[name] && formik.errors[name]
             ? "border-red-500"
@@ -78,17 +96,17 @@ export default function ContactUs() {
       <img
         src={navbarbg}
         alt="Background"
-        className="w-full h-[100px] sm:h-[200px] absolute top-0 object-cover"
+        className="w-full h-[100px] sm:h-[150px] absolute top-0 object-cover"
       />
-
+      <Toaster />
       {/* Main Container */}
-      <div className="mt-[40px] sm:mt-[96px] p-4 sm:p-10 flex flex-col md:flex-row">
+      <div className="mt-[40px] sm:mt-[72px] p-4 sm:p-10 flex flex-col md:flex-row">
         {/* Text Section */}
-        <div className="px-2 sm:px-[40px] lg:px-[70px] w-full md:w-5/12 text-center md:text-left">
+        <div className="px-2 sm:px-[32px] lg:px-[46px] w-full md:w-5/12 text-center md:text-left">
           <div className="text-[36px] md:text-[46px] font-gilroy leading-[1.2]">
             Have questions or need assistance?
           </div>
-          <div className="mt-4 px-2 text-[20px] sm:text-[24px] font-roboto-regular">
+          <div className="mt-4 text-[18px] sm:text-[20px] font-roboto-regular">
             We're here to help—reach out to us today!
           </div>
         </div>
@@ -100,7 +118,7 @@ export default function ContactUs() {
               <div className="flex flex-wrap -mx-2">
                 <div className="w-full sm:w-1/2 px-2">
                   {renderInput(
-                    "firstName",
+                    "firstname",
                     "First Name",
                     "text",
                     "First Name",
@@ -109,7 +127,7 @@ export default function ContactUs() {
                 </div>
                 <div className="w-full sm:w-1/2 px-2">
                   {renderInput(
-                    "lastName",
+                    "lastname",
                     "Last Name",
                     "text",
                     "Last Name",
@@ -143,7 +161,7 @@ export default function ContactUs() {
               <div className="flex flex-wrap -mx-2">
                 <div className="w-full sm:w-1/2 px-2">
                   {renderInput(
-                    "teachersCount",
+                    "teacherCount",
                     "No of Teachers",
                     "text",
                     "No. of Teachers"
@@ -164,7 +182,7 @@ export default function ContactUs() {
                   type="submit"
                   className="text-base px-6 py-2 rounded-xl font-medium text-white bg-[#0F4189] hover:bg-blue-800"
                 >
-                  Start for Free
+                  Send Message
                 </button>
               </div>
             </form>

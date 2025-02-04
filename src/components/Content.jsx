@@ -5,6 +5,7 @@ import logo from "../assets/logo.png";
 import section1 from "../assets/section1.png";
 import underline from "../assets/underline.png";
 import attendance from "../assets/attendance.png";
+import attendance_m from "../assets/attendance_m.png";
 
 import build from "../assets/build.png";
 import manage from "../assets/manage.png";
@@ -35,6 +36,7 @@ import image5 from "../assets/image5.png";
 import image6 from "../assets/image6.png";
 import ResponsiveCardsMobile from "./ResponsiveCardMobile";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Content() {
   const [selectedOption, setSelectedOption] = useState("build");
@@ -131,20 +133,6 @@ export default function Content() {
 
   const { bgImage, views } = optionsData[selectedOption];
 
-  const InfoCard = ({ icon, title, description, isVisible }) => (
-    <div
-      className={`w-[230px] flex flex-col items-center px-2 py-2 bg-transparent transition-opacity duration-500 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
-    >
-      <img src={icon} alt={title} className="w-16 h-16 mb-2" />
-      <h2 className="text-xl font-gilroy text-center my-4">{title}</h2>
-      <p className="text-base font-roboto-regular text-center text-gray-600">
-        {description}
-      </p>
-    </div>
-  );
-
   const tiles = [
     {
       image: image1,
@@ -190,13 +178,16 @@ export default function Content() {
       <section>
         <div className="mt-12 flex flex-col justify-center items-center px-4">
           <div className="relative text-center">
-            <p className="text-[40px] sm:text-[72px] font-gilroy w-full sm:w-[510px] lg:w-[810px] sm:leading-[79px] leading-[50px]">
+            <p className="text-[48px] sm:text-[72px] font-gilroy w-full sm:w-[510px] lg:w-[810px] sm:leading-[79px] leading-[50px]">
               One Platform for Your School
             </p>
-            <img
+            <motion.img
+              initial={{ width: 0 }}
+              whileInView={{ width: "70%" }}
+              transition={{ ease: [0.5, 1, 0.89, 1], duration: 1 }}
               src={underline}
               alt=""
-              className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[70px] top-[45px]"
+              className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[70px] top-[46px]"
             />
           </div>
           <p className="text-[20px] sm:text-[24px] text-[#31373D] font-roboto-regular w-full sm:w-[548px] text-center my-8">
@@ -205,7 +196,7 @@ export default function Content() {
           </p>
           <div className="flex w-[280px] justify-around">
             <a
-              href="https://admin.nisaiji.com/"
+              href="https://admin.sharedri.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-base bg-[#0F4189] hover:bg-blue-800 px-4 py-2 rounded-xl font-roboto-medium mt-2 text-center"
@@ -227,16 +218,19 @@ export default function Content() {
         />
       </section>
       {/* Key Features */}
-      <section>
-        <div className="mt-12 flex flex-col justify-center items-center px-4">
+      <section data-scroll data-scroll-speed="-.1">
+        <div className="mt-16 flex flex-col justify-center items-center px-4">
           <div className="relative text-center">
-            <p className="text-[32px] sm:text-[52px] font-gilroy w-full sm:w-[510px] lg:w-[810px] sm:leading-[58px] leading-[40px]">
+            <p className="text-[32px] sm:text-[52px] font-gilroy w-full sm:w-[510px] lg:w-[810px] sm:leading-[58px] leading-[36px]">
               An Educational Administration created to be your own.
             </p>
-            <img
+            <motion.img
+              initial={{ width: 0 }}
+              whileInView={{ width: "60%" }}
+              transition={{ ease: [0.5, 1, 0.89, 1], duration: 1 }}
               src={underline}
               alt=""
-              className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[55px] top-[40px]"
+              className="absolute sm:w-[70%] w-[50%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[55px] top-[32px]"
             />
           </div>
           <p className="text-[18px] sm:text-[22px] text-[#31373D] font-roboto-regular w-full sm:w-[548px] text-center my-8">
@@ -268,61 +262,71 @@ export default function Content() {
         </div>
       </section>
       {/* Attendance Section */}
-      <section>
-        <div className="mt-12 flex flex-col justify-center items-center px-5">
+      <section data-scroll data-scroll-speed="-.1">
+        <div className="mt-32 flex flex-col justify-center items-center px-5">
           <div className="relative text-center">
-            <p className="text-[24px] sm:text-[52px] px-5 font-gilroy w-full sm:w-[510px] lg:w-[810px] sm:leading-[58px] leading-[32px]">
+            <p className="text-[32px] sm:text-[52px] px-5 font-gilroy w-full sm:w-[510px] lg:w-[720px] sm:leading-[58px] leading-[36px]">
               Empower Teachers with Smart Attendance Tools
             </p>
-            <img
+            <motion.img
+              initial={{ width: 0 }}
+              whileInView={{ width: "70%" }}
+              transition={{ ease: [0.5, 1, 0.89, 1], duration: 1 }}
               src={underline}
               alt=""
-              className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[55px] top-[30px]"
+              className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[112px] top-[104px]"
             />
           </div>
-          <p className="text-[16px] sm:text-[22px] text-[#31373D] font-roboto-regular w-full sm:w-[548px] text-center my-6 sm:my-8">
+          <p className="text-[18px] sm:text-[22px] text-[#31373D] font-roboto-regular w-full sm:w-[548px] text-center my-6 sm:my-8">
             Effortless attendance tracking and real-time insights keep you
             organized and focused on your students.
           </p>
-
-          <div className="w-full max-w-[1138px] border border-[#D3D5D9] h-[400px] sm:h-[504px] sm:pl-10 pt-6 sm:pt-10 rounded-[20px] flex flex-col sm:flex-row justify-between sm:space-x-6">
+          <div className="w-full max-w-[1138px] border border-[#D3D5D9] sm:h-[504px] h-auto sm:pl-10 pt-6 sm:pt-10 rounded-[20px] flex flex-col sm:flex-row justify-between sm:space-x-6">
             <p className="w-full sm:w-[382px] px-5 text-sm sm:text-lg text-[#31373D] font-roboto-regular text-center sm:text-left mb-4 sm:mb-0">
               Quickly
               <b> mark attendance, access student data, and monitor trends </b>
               with just a few taps, all in one intuitive app.
             </p>
-            <img
-              src={attendance}
-              alt="Attendance illustration"
-              className="w-full h-full pl-5 sm:w-[70%] max-sm:rounded-bl-none max-sm:rounded-tr-none rounded-[20px]"
-            />
+            <div className="w-full sm:w-[70%] h-[300px] sm:h-auto rounded-[20px] overflow-hidden">
+              {/* <picture>
+                <source media="(max-width: 640px)" srcSet={attendance_m} /> */}
+                <img
+                  src={attendance_m}
+                  alt="Attendance illustration"
+                  className="w-full h-full object-cover"
+                />
+              {/* </picture> */}
+            </div>
           </div>
         </div>
       </section>
       {/* Product Grids */}
       <section>
-        <div className="mt-12 flex flex-col justify-center items-center px-4">
+        <div className="mt-24 flex flex-col justify-center items-center px-4">
           <div className="relative text-center">
-            <p className="text-[24px] sm:text-[52px] font-gilroy w-full sm:w-[510px] lg:w-[810px] sm:leading-[58px] leading-[32px]">
+            <p className="text-[32px] sm:text-[52px] font-gilroy w-full sm:w-[510px] lg:w-[720px] sm:leading-[58px] leading-[36px]">
               What Makes Our Product Stand Out
             </p>
 
-            <img
+            <motion.img
+              initial={{ width: 0 }}
+              whileInView={{ width: "60%" }}
+              transition={{ ease: [0.5, 1, 0.89, 1], duration: 1 }}
               src={underline}
               alt=""
-              className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[50px] top-[30px]"
+              className="absolute sm:w-[50%] w-[70%] h-[8px] sm:h-[16px] left-1/2 transform -translate-x-1/2 sm:top-[52px] top-[32px]"
             />
           </div>
-          <p className="text-[16px] sm:text-[22px] text-[#31373D] font-roboto-regular w-full sm:w-[548px] text-center my-6 sm:my-8">
+          <p className="text-[18px] sm:text-[22px] text-[#31373D] font-roboto-regular w-full sm:w-[548px] text-center my-6 sm:my-4">
             A unified platform to centralize, secure, and simplify educational
-            operations.
+            operations.duration
           </p>
 
           <div className="sm:px-[52px] md:px-[92px] sm:py-[78px] px-[20px] py-[28px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 p-4">
             {tiles.map((data, index) => (
               <div
                 key={index}
-                className="p-4 bg-white rounded-lg sm:shadow-[0_4px_10px_rgba(0,0,0,0.1)] flex flex-col items-center sm:items-start transition-all duration-300 hover:scale-105"
+                className="p-4 bg-white rounded-lg sm:shadow-[0_4px_10px_rgba(0,0,0,0.1)] flex flex-col items-center sm:items-start transition-all -300 hover:scale-105"
               >
                 <img
                   src={data.image}
@@ -343,17 +347,17 @@ export default function Content() {
       {/* Support Section */}
       <section className="w-full h-auto sm:h-[300px] px-4 sm:px-[32px] md:px-[92px] py-10 bg-[#0F4189] flex flex-col sm:flex-row justify-between items-center space-y-5 sm:space-y-0">
         <div className="w-full sm:w-[640px] text-center sm:text-left">
-          <p className="text-[24px] sm:text-[32px] font-gilroy text-[#92B9F0]">
+          <p className="text-[32px] sm:text-[32px] font-gilroy text-[#92B9F0] leading-[36px]">
             Dedicated Support,
             <span className="text-white"> When You Need It</span>
           </p>
-          <p className="w-full sm:w-[400px] md:w-[450px] font-roboto-regular text--sm text-white mt-4">
+          <p className="w-full sm:w-[400px] md:w-[450px] font-roboto-regular text-[16px] sm:text-[20px] text-white mt-[24px]">
             Our support team is always available to assist with any questions or
             issues, ensuring you get the most out of our platform.
           </p>
           <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 mt-[24px] justify-center sm:justify-start">
             <a
-              href="https://admin.nisaiji.com/"
+              href="https://admin.sharedri.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-base bg-[#1D5CB7] hover:bg-blue-800 px-4 py-2 rounded-xl font-roboto-medium text-center"

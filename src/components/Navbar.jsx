@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Smrti from "../assets/Smrti.png";
 import Smrtiw from "../assets/Smrtiw.png";
-import Menu from "../assets/Menu.png";
+import Menu from "../assets/menu.png";
 import cross from "../assets/cross.png";
 import { Link, useLocation } from "react-router-dom";
 
@@ -16,11 +16,18 @@ export default function Navbar() {
     <div className="relative select-none h-24 w-full px-6 py-4 bg-transparent flex flex-row justify-between items-center z-10">
       {/* Logo */}
       <Link to="/">
-        <img
+        {/* <img
           src={isContactPage ? Smrtiw : Smrti}
           alt="Logo"
           className="w-[80px] h-[35px] cursor-pointer object-contain transition-all duration-300"
-        />
+        /> */}
+        <span
+          className={`text-3xl font-bold font-roboto cursor-pointer ${
+            isContactPage ? "text-white" : "text-black"
+          }`}
+        >
+          SharedRI
+        </span>
       </Link>
 
       {/* Desktop Buttons */}
@@ -34,12 +41,12 @@ export default function Navbar() {
           Contact Us
         </Link>
         <a
-          href="https://admin.nisaiji.com/"
+          href="https://admin.sharedri.com"
           target="_blank"
           rel="noopener noreferrer"
           className={`text-base  px-4 py-2 rounded-xl font-medium ${
             isContactPage
-              ? "text-black bg-white hover:bg-slate-100"
+              ? "text-black bg-white hover:bg-[#0F4189] hover:text-white"
               : "text-white bg-[#0F4189] hover:bg-blue-800"
           }`}
         >
@@ -52,7 +59,9 @@ export default function Navbar() {
         <img
           src={isMenuOpen ? cross : Menu}
           alt="Menu Icon"
-          className="w-[32px] h-[32px] cursor-pointer"
+          className={`w-[32px] h-[32px] cursor-pointer ${
+            isContactPage ? "invert" : ""
+          }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         />
       </div>
@@ -70,12 +79,14 @@ export default function Navbar() {
         <div className="flex flex-col items-center p-4">
           <Link
             to="/contact"
+            onClick={() => setIsMenuOpen(false)}
             className="text-[#FF793F] text-base px-4 py-2 font-roboto-medium hover:text-orange-400 hover:transition-colors hover::duration-700 w-full text-center"
           >
             Contact Us
           </Link>
           <a
-            href="https://admin.nisaiji.com/"
+            onClick={() => setIsMenuOpen(false)}
+            href="https://admin.sharedri.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white text-base bg-[#1D5CB7] mx-10 py-2 rounded-xl font-roboto-medium mt-2 hover:bg-blue-800 transition-all duration-700 ease-in-out w-full text-center"

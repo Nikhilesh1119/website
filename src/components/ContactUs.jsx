@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import navbarbg from "../assets/navbarbg.png";
 import toast, { Toaster } from "react-hot-toast";
+import { baseURL } from "../services";
 
 export default function ContactUs() {
   const formik = useFormik({
@@ -42,10 +43,10 @@ export default function ContactUs() {
         const filteredValues = Object.fromEntries(
           Object.entries(values).filter(([_, value]) => value !== "")
         );
-        const url = "https://api.sharedri.com/customer-support/query";
-        // const url = "http://localhost:4000/customer-support/query";
-
-        const response = await axios.post(url, filteredValues);
+        const response = await axios.post(
+          `${baseURL}customer-support/query`,
+          filteredValues
+        );
 
         if (response?.data?.statusCode === 200) {
           toast.success(response?.data?.msg);

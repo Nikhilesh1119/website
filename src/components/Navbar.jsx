@@ -42,7 +42,7 @@ export default function Navbar() {
           Contact Us
         </Link>
         <a
-          href={baseURL}
+          href="https://development-web.nisaiji.com"
           target="_blank"
           rel="noopener noreferrer"
           className={`text-base  px-4 py-2 rounded-xl font-medium ${
@@ -87,7 +87,7 @@ export default function Navbar() {
           </Link>
           <a
             onClick={() => setIsMenuOpen(false)}
-            href={baseURL}
+            href="https://development-web.nisaiji.com"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white text-base bg-[#1D5CB7] mx-10 py-2 rounded-xl font-roboto-medium mt-2 hover:bg-blue-800 transition-all duration-700 ease-in-out w-full text-center"

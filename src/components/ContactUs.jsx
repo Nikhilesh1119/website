@@ -21,8 +21,8 @@ export default function ContactUs() {
       message: "",
     },
     validationSchema: Yup.object({
-      firstname: Yup.string().required("First Name is required"),
-      lastname: Yup.string().required("Last Name is required"),
+      firstname: Yup.string().required("Firstname is required"),
+      lastname: Yup.string().required("Lastname is required"),
       schoolName: Yup.string().required("School Name is required"),
       // email: Yup.string().email("Invalid email").required("Email is required"),
       phone: Yup.string()
@@ -30,7 +30,7 @@ export default function ContactUs() {
           /^[6-9]\d{9}$/,
           "Phone must start with 6-9 and be 10 digits long"
         )
-        .required("Phone is required"),
+        .required("Phone Number is required"),
       state: Yup.string().required("State is required"),
       city: Yup.string().required("City is required"),
       // teacherCount: Yup.string().required("Number of teachers is required"),

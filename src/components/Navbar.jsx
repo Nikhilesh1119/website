@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import Smrti from "../assets/Smrti.png";
-import Smrtiw from "../assets/Smrtiw.png";
 import Menu from "../assets/menu.png";
 import cross from "../assets/cross.png";
 import { Link, useLocation } from "react-router-dom";
-import { baseURL } from "../services";
+import { HREF } from "../services";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +40,7 @@ export default function Navbar() {
           Contact Us
         </Link>
         <a
-          href="https://development-web.nisaiji.com"
+          href={HREF}
           target="_blank"
           rel="noopener noreferrer"
           className={`text-base  px-4 py-2 rounded-xl font-medium ${
@@ -87,7 +85,7 @@ export default function Navbar() {
           </Link>
           <a
             onClick={() => setIsMenuOpen(false)}
-            href="https://development-web.nisaiji.com"
+            href={HREF}
             target="_blank"
             rel="noopener noreferrer"
             className="text-white text-base bg-[#1D5CB7] mx-10 py-2 rounded-xl font-roboto-medium mt-2 hover:bg-blue-800 transition-all duration-700 ease-in-out w-full text-center"

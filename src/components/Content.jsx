@@ -37,6 +37,7 @@ import image6 from "../assets/image6.png";
 import ResponsiveCardsMobile from "./ResponsiveCardMobile";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { HREF } from "../services";
 
 export default function Content() {
   const [selectedOption, setSelectedOption] = useState("build");
@@ -196,7 +197,7 @@ export default function Content() {
           </p>
           <div className="flex w-[280px] justify-around">
             <a
-              href="https://admin.sharedri.com"
+              href={HREF}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-base bg-[#0F4189] hover:bg-blue-800 px-4 py-2 rounded-xl font-roboto-medium mt-2 text-center"
@@ -290,11 +291,11 @@ export default function Content() {
             <div className="w-full sm:w-[70%] h-[300px] sm:h-auto rounded-[20px] overflow-hidden">
               {/* <picture>
                 <source media="(max-width: 640px)" srcSet={attendance_m} /> */}
-                <img
-                  src={attendance_m}
-                  alt="Attendance illustration"
-                  className="w-full h-full object-cover"
-                />
+              <img
+                src={attendance_m}
+                alt="Attendance illustration"
+                className="w-full h-full object-cover"
+              />
               {/* </picture> */}
             </div>
           </div>
@@ -357,7 +358,7 @@ export default function Content() {
           </p>
           <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 mt-[24px] justify-center sm:justify-start">
             <a
-              href="https://admin.sharedri.com"
+              href={HREF}
               target="_blank"
               rel="noopener noreferrer"
               className="text-white text-base bg-[#1D5CB7] hover:bg-blue-800 px-4 py-2 rounded-xl font-roboto-medium text-center"

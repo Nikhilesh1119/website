@@ -12,13 +12,13 @@ export default function Footer() {
           <div className="text-[#9098A0] font-roboto-regular text-[18px] text-center sm:text-left">
             Connect with us
           </div>
-          <div className="flex flex-row items-center space-x-[10px]">
+          {/* <div className="flex flex-row items-center space-x-[10px]">
             <img src={phone} alt="Phone" className="w-5 h-5" />
             <img src={whatsapp} alt="Phone" className="w-5 h-5" />
             <div className="text-white font-roboto-medium text-[18px]">
               +91 9713 411 511
             </div>
-          </div>
+          </div> */}
           {/* <div className="flex flex-row items-center space-x-[10px]">
             <img src={email} alt="Email" className="w-5 h-5" />
             <div className="text-white font-roboto-regular text-sm">

@@ -3,6 +3,7 @@ import phone from "../assets/phone.png";
 import email from "../assets/email.png";
 import whatsapp from "../assets/whatsapp.png";
 import Smrtiw from "../assets/Smrtiw.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -25,6 +26,14 @@ export default function Footer() {
               demo@gmail.com
             </div>
           </div> */}
+          <div className="flex flex-row items-center space-x-[10px]">
+            <Link
+              to="/privacyPolicy"
+              className="text-white font-roboto-regular text-sm"
+            >
+              Privacy & policy
+            </Link>
+          </div>
         </div>
         <span className="text-3xl font-bold font-roboto text-white">
           SharedRI

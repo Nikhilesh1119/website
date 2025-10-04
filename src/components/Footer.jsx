@@ -13,27 +13,27 @@ export default function Footer() {
           <div className="text-[#9098A0] font-roboto-regular text-[18px] text-center sm:text-left">
             Connect with us
           </div>
-          {/* <div className="flex flex-row items-center space-x-[10px]">
+          <div className="flex flex-row items-center space-x-[10px]">
             <img src={phone} alt="Phone" className="w-5 h-5" />
             <img src={whatsapp} alt="Phone" className="w-5 h-5" />
             <div className="text-white font-roboto-medium text-[18px]">
               +91 9713 411 511
             </div>
-          </div> */}
-          {/* <div className="flex flex-row items-center space-x-[10px]">
+          </div>
+          <div className="flex flex-row items-center space-x-[10px]">
             <img src={email} alt="Email" className="w-5 h-5" />
             <div className="text-white font-roboto-regular text-sm">
-              demo@gmail.com
+              sales@chitrakoshservices.com
             </div>
-          </div> */}
-          <div className="flex flex-row items-center space-x-[10px]">
+          </div>
+          {/* <div className="flex flex-row items-center space-x-[10px]">
             <Link
               to="/privacyPolicy"
               className="text-white font-roboto-regular text-sm"
             >
               Privacy & policy
             </Link>
-          </div>
+          </div> */}
         </div>
         <span className="text-3xl font-bold font-roboto text-white">
           SharedRI
@@ -45,7 +45,7 @@ export default function Footer() {
         /> */}
       </div>
       <p className="bg-[#1D1F20] text-[#9098A0] font-roboto-regular text-xs py-5 text-center border-t border-[#31373D]">
-        © 2024 Smrti Ltd. All rights reserved.
+        © 2025 Chitrakosh services. All right reserved.
       </p>
     </footer>
   );

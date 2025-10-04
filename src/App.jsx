@@ -20,8 +20,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Content />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/privacyPolicy" element={<PrivacyPolicy />} />
+          {/* <Route path="/contact" element={<ContactUs />} /> */}
+          {/* <Route path="/privacyPolicy" element={<PrivacyPolicy />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>

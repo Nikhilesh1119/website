@@ -195,7 +195,7 @@ export default function Content() {
             Easily manage classes, track attendance, and get real-time insights
             in one simple platform.
           </p>
-          <div className="flex w-[280px] justify-around">
+          {/* <div className="flex w-[280px] justify-around">
             <a
               href={HREF}
               target="_blank"
@@ -210,7 +210,7 @@ export default function Content() {
             >
               Talk to sales
             </Link>
-          </div>
+          </div> */}
         </div>
         <img
           src={section1}
@@ -356,7 +356,7 @@ export default function Content() {
             Our support team is always available to assist with any questions or
             issues, ensuring you get the most out of our platform.
           </p>
-          <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 mt-[24px] justify-center sm:justify-start">
+          {/* <div className="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0 mt-[24px] justify-center sm:justify-start">
             <a
               href={HREF}
               target="_blank"
@@ -371,7 +371,7 @@ export default function Content() {
             >
               Talk to Sales
             </Link>
-          </div>
+          </div> */}
         </div>
         <img src={logo} alt="" className="size-[180px]" />
       </section>

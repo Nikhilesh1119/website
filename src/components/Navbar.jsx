@@ -14,23 +14,23 @@ export default function Navbar() {
   return (
     <div className="relative select-none h-24 w-full px-6 py-4 bg-transparent flex flex-row justify-between items-center z-10">
       {/* Logo */}
-      <Link to="/">
+      {/* <Link to="/"> */}
         {/* <img
           src={isContactPage ? Smrtiw : Smrti}
           alt="Logo"
           className="w-[80px] h-[35px] cursor-pointer object-contain transition-all duration-300"
         /> */}
         <span
-          className={`text-3xl font-bold font-roboto cursor-pointer ${
+          className={`text-3xl font-bold font-roboto ${
             isContactPage ? "text-white" : "text-black"
           }`}
         >
           SharedRI
         </span>
-      </Link>
+      {/* </Link> */}
 
       {/* Desktop Buttons */}
-      <div className="hidden sm:flex flex-row items-center">
+      {/* <div className="hidden sm:flex flex-row items-center">
         <Link
           to="/contact"
           className={` text-base px-4 py-2 font-medium hover:text-orange-400 mr-[17px] ${
@@ -51,10 +51,10 @@ export default function Navbar() {
         >
           Start for Free
         </a>
-      </div>
+      </div> */}
 
       {/* Mobile Menu Toggle */}
-      <div className="sm:hidden flex items-center">
+      {/* <div className="sm:hidden flex items-center">
         <img
           src={isMenuOpen ? cross : Menu}
           alt="Menu Icon"
@@ -63,10 +63,10 @@ export default function Navbar() {
           }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         />
-      </div>
+      </div> */}
 
       {/* Animated Dropdown Menu */}
-      <div
+      {/* <div
         className={`sm:hidden absolute top-full left-0 bg-white transition-all duration-300 ease-in-out ${
           isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         } w-full overflow-hidden`}
@@ -93,7 +93,7 @@ export default function Navbar() {
             Start for Free
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

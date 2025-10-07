@@ -25,7 +25,8 @@ export default function Navbar() {
             isContactPage ? "text-white" : "text-black"
           }`}
         >
-          SharedRI
+          {/* SharedRI */}
+          SikshaOS
         </span>
       {/* </Link> */}
 

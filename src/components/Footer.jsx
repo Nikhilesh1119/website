@@ -36,7 +36,8 @@ export default function Footer() {
           </div> */}
         </div>
         <span className="text-3xl font-bold font-roboto text-white">
-          SharedRI
+          {/* SharedRI */}
+          SikshaOS
         </span>
         {/* <img
           src={Smrtiw}
